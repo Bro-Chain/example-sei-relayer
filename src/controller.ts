@@ -32,7 +32,7 @@ export class ApiController {
 
       const fee: StdFee = {
         amount: coins(process.env.SEI_FEES, "usei"),
-        gas: "1000000",
+        gas: process.env.SEI_GAS || "1000000",
         granter: process.env.SEI_FEE_GRANTER,
       };
       const signingClient = await getSeiSigningWasmClient(wallet.wallet);
