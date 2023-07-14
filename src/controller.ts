@@ -59,6 +59,10 @@ export class ApiController {
           },
         };
         try {
+          ctx.logger.info(`WH-DEBUG wallet address ${wallet.address}`);
+          ctx.logger.info(`WH-DEBUG tokenbridge address ${CONFIG.seiConfiguration.seiTranslator}`);
+          ctx.logger.info(`WH-DEBUG msg ${JSON.stringify(msg)}`);
+          ctx.logger.info(`WH-DEBUG fee ${JSON.stringify(fee)}`);
           const tx = await signingClient.execute(
             wallet.address,
             CONFIG.seiConfiguration.seiTranslator,
@@ -87,7 +91,10 @@ export class ApiController {
           },
         };
         try {
-
+          ctx.logger.info(`WH-DEBUG wallet address ${wallet.address}`);
+          ctx.logger.info(`WH-DEBUG tokenbridge address ${ctx.tokenBridge.addresses.sei}`);
+          ctx.logger.info(`WH-DEBUG msg ${JSON.stringify(msg)}`);
+          ctx.logger.info(`WH-DEBUG fee ${JSON.stringify(fee)}`);
           const tx = await signingClient.execute(
             wallet.address,
             ctx.tokenBridge.addresses.sei,
