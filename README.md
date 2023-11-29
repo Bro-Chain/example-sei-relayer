@@ -1,4 +1,4 @@
-# example-sei-relayer
+# SEI Wormhole relayer
 
 Run the spy, redis, and then the relayer.
 
